@@ -86,39 +86,48 @@
     </head>
     <body>
         <h1>Broker Record Maintenance App</h1>
-        <div class="container">
-            <div class="left-section">
+    <div class="container">
+        <div class="left-section">
             <label for="broker-name">Broker Name:</label>
             <input type="text" id="broker-name" placeholder="Enter Broker Name">
+            
             <label for="expected-amount">Expected Amount:</label>
             <input type="text" id="expected-amount" placeholder="Enter Expected Amount">
+           
+           
             <label>Denomination:</label>
-            <input type="text" placeholder="500" id="denom-500">
-            <input type="text" placeholder="200" id="denom-200">
-            <input type="text" placeholder="100" id="denom-100">
-            <input type="text" placeholder="50" id="denom-50">
-            <input type="text" placeholder="20" id="denom-20">
-            <input type="text" placeholder="10" id="denom-10">
+            <input type="text" placeholder="500" id="denom-500" inputmode="numeric" pattern="[0-9]*">
+            <input type="text" placeholder="200" id="denom-200" inputmode="numeric" pattern="[0-9]*">
+            <input type="text" placeholder="100" id="denom-100" inputmode="numeric" pattern="[0-9]*">
+            <input type="text" placeholder="50" id="denom-50" inputmode="numeric" pattern="[0-9]*">
+            <input type="text" placeholder="20" id="denom-20" inputmode="numeric" pattern="[0-9]*">
+            <input type="text" placeholder="10" id="denom-10" inputmode="numeric" pattern="[0-9]*">
+            
             <label>Coin:</label>
-            <input type="text" placeholder="1" id="coin-1">
-            <input type="text" placeholder="2" id="coin-2">
-            <input type="text" placeholder="5" id="coin-5">
-            <input type="text" placeholder="10" id="coin-10">
+            <input type="text" placeholder="1" id="coin-1" inputmode="numeric" pattern="[0-9]*">
+            <input type="text" placeholder="2" id="coin-2" inputmode="numeric" pattern="[0-9]*">
+            <input type="text" placeholder="5" id="coin-5" inputmode="numeric" pattern="[0-9]*">
+            <input type="text" placeholder="10" id="coin-10" inputmode="numeric" pattern="[0-9]*">
+            
             <label for="online-payment">Online Payment:</label>
+
+
             <input type="text" id="online-payment" placeholder="Enter Online Payment">
             <strong>Current Amount: ₹</strong><span id="current-amount">0</span>
             <button onclick="addBroker()">Add Broker</button>
             <button onclick="calculateTotals()">Calculate Totals</button>
             <button onclick="exportToPDF()">Export to PDF</button>
             <button onclick="updateChanges()">Update Changes</button>
-            <button onclick="clearFormFields()">Clear Form</button>
+            <button onclick="clearForm()">Clear Form</button>
+            
             <button id="delete-record-btn" onclick="deleteBroker()">Delete Record</button>
-            </div>
-            <div class="right-section">
+            <button onclick="deleteAllBrokers()">Delete All Brokers</button>
+        </div>
+        <div class="right-section">
             <h3>Broker List:</h3>
             <ul id="brokers-list"></ul>
-            </div>
         </div>
+    </div>
         <footer>
             <h3>Contact Us</h3>
             <p>GitHub: <a href="https://github.com/prathameshanand" target="_blank">https://github.com/prathameshanand</a></p>
@@ -223,6 +232,14 @@
                 saveToLocalStorage();  // Save changes to localStorage
             } else {
                 alert('Broker not found.');
+            }
+        }
+        function deleteAllBrokers() {
+            if (confirm('Are you sure you want to delete all broker records?')) {
+                mainBroker.amountsCollected = []; // Clear all broker records
+                updateBrokersList();
+                clearFormFields();
+                saveToLocalStorage();  // Save changes to localStorage
             }
         }
     
