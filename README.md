@@ -44,9 +44,4 @@ For further inquiries or support, feel free to reach out:
 - GitHub: https://github.com/prathameshanand
 - Email: prathameshsci963@gmail.com
 
----
 
-This template includes:
-- Features of the app.
-- Installation steps for local usage.
-- Contribution guidelines to encourage community involvement.
