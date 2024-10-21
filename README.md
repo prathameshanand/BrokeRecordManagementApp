@@ -13,7 +13,8 @@ This web-based **Agent Record Maintenance App** allows users to manage records f
 - **Local Storage Support**: Data is saved in the browser’s local storage, ensuring records are persistent even after refreshing the page.
 - **Total Calculations**: Automatically calculate total expected, collected, and remaining amounts.
 
-
+##Preview want to this project then visite this link
+https://prathameshanand.github.io/BrokeRecordManagementApp/
 
 ## Usage
 
@@ -40,7 +41,7 @@ Feel free to report bugs or suggest new features by opening an issue.
 
 For further inquiries or support, feel free to reach out:
 
-- GitHub: 
+- GitHub: https://github.com/prathameshanand
 - Email: prathameshsci963@gmail.com
 
 ---
